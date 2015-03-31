@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fair Play</title>
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+<script type="text/javascript">
+    function sendForm() {
+        var f = document.forms.form1;
+        $.post('http://localhost:9000/api/send',
+            JSON.stringify({
+                userId: f.userId.value,
+                currencyFrom: f.currencyFrom.value,
+                currencyTo: f.currencyTo.value,
+                amountSell: parseFloat(f.amountSell.value),
+                amountBuy: parseFloat(f.amountBuy.value),
+                rate: parseFloat(f.rate.value),
+                timePlaced: f.timePlaced.value,
+                originatingCountry: f.originatingCountry.value
+            })
+        );
+    }
+</script>
+<form name="form1">
+    <div>userId: <input type="text" name="userId" value="134256"/></div>
+    <div>currencyFrom: <input type="text" name="currencyFrom" value="EUR"/></div>
+    <div>currencyTo: <input type="text" name="currencyTo" value="GBP"/></div>
+    <div>amountSell: <input type="text" name="amountSell" value="1000"/></div>
+    <div>amountBuy: <input type="text" name="amountBuy" value="747.10"/></div>
+    <div>rate: <input type="text" name="rate" value="0.7471"/></div>
+    <div>timePlaced: <input type="text" name="timePlaced" value="24-JAN-15 10:27:44"/></div>
+    <div>originatingCountry: <input type="text" name="originatingCountry" value="FR"/></div>
+    <div><input type="button" value="Submit" onclick="sendForm()"></div>
+</form>
+</body>
+</html>
