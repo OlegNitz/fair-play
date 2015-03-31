@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   "org.webjars" % "bootstrap" % "3.0.0",
-  "org.webjars" % "flot" % "0.8.0"
+  "org.webjars" % "flot" % "0.8.0",
+  "com.typesafe.akka" %% "akka-testkit" % "2.3.9" % "test"
 )
 
 
