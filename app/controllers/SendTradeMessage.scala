@@ -13,11 +13,11 @@ object SendTradeMessage extends Controller {
     placeResult.fold(
       errors => {
         Logger.error(s"Error receiving TradeMessage: ${JsError.toFlatJson(errors)}")
-        BadRequest(Json.obj("status" ->"KO", "message" -> JsError.toFlatJson(errors)))
+        BadRequest(Json.obj("type" -> "Error", "text" -> JsError.toFlatJson(errors)))
       },
       msg => {
         messageProcessor ! MessageReceived(msg)
-        Ok(Json.obj("status" ->"OK"))
+        Ok(Json.obj("type" -> "OK"))
       }
     )
   }

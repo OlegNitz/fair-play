@@ -10,14 +10,9 @@ libraryDependencies ++= Seq(
   jdbc,
   anorm,
   cache,
-  ws
-  /*
-  "com.typesafe.akka" %% "akka-actor" % "2.3.9",
-  "com.typesafe.akka" %% "akka-slf4j" % "2.3.9",
+  ws,
   "org.webjars" % "bootstrap" % "3.0.0",
-  "org.webjars" % "flot" % "0.8.0",
-  "com.typesafe.akka" %% "akka-testkit" % "2.3.9" % "test"
-  */
+  "org.webjars" % "flot" % "0.8.0"
 )
 
 
